@@ -1,0 +1,72 @@
+html{
+    padding-left: 20px;
+}
+
+body {
+    background: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 1500px auto;
+    
+    background-color: #E1E7FD;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img{
+    width: 620px;
+    height: 350px;
+}
+
+.h1{
+    font-weight: bold; 
+}
+
+.page {
+    max-width: 500px;
+    margin: 0 auto; /* top bottom 0 */
+    padding: 0 10px;
+}
+
+.card{
+    margin-bottom: 20px;
+    background: #fffAf2;
+    padding: 20px;
+    width: 600px;
+    border-radius: 20px;
+}
+
+.intro{
+    width: 620px;
+}
+
+textarea{
+  width: 100%;
+  max-width: 400px;
+}
+
+#favorite{
+    width: 130px;
+    height: 35px;
+}
+
+#submitButton{
+    width: 170px;
+    height: 45px;
+    border-width: 1px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+#signature{
+    font-style: italic;
+}
+
+.gallery{
+    overflow: hidden;
+}
+
+.gallery img:hover{
+    transform: scale(1.5);
+}
+
+
