@@ -36,26 +36,43 @@
             <br><br>
             <div class="question">
 
-                <div class="card">
-                    <!--Personal information section.-->
-                    <h3>Personal Information</h3>
-                    <p>First name: <input type="text" name="firstname"></p>
-                    <p>Last name: <input type="text" name="lastname"></p>
+                <!-- STEP 1 -->
+                <div class="step" data-step="0">
+                    <div class="card">
+                        <!--Personal information section.-->
+                        <h3>Personal Information</h3>
+                        <p>First name: <input type="text" name="firstname"></p>
+                        <p>Last name: <input type="text" name="lastname"></p>
+                    </div>
+                    <div class="nav">
+                    <button type="button" class="next">Next</button>
+                    </div>
                 </div>
 
+                <!-- STEP 2 -->
+                <div class="step" data-step="1" style="display:none;">
                 <div class="card">
                     <!--Text type based questions.-->
                     <h3>What is one feature you like and hate the most about this website's user interface:</h3>
-                    <textarea rows="5" cols="100"></textarea>
+                    <textarea name="like_hate" rows="5" cols="100"></textarea>
                     <br>
                     <h3>What is one feature you would add to this user interface:</h3>
-                    <textarea rows="5" cols="100"></textarea>
+                    <textarea name="add_feature" rows="5" cols="100"></textarea>
                     <br>
                     <h3>What is one feature you would modify from this user interface:</h3>
-                    <textarea rows="5" cols="100"></textarea>
+                    <textarea name="modify_feature" rows="5" cols="100"></textarea>
                     <br>
                 </div>
 
+                <div class="nav">
+                <button type="button" class="back">Back</button>
+                <button type="button" class="next">Next</button>
+                </div>
+            </div>
+
+
+            <!-- STEP 3 -->
+            <div class="step" data-step="2" style="display:none;">
                 <div class="card">
                     <!--Selection question for multiple boxes to select.-->
                     <h3>Select all navigation tabs in the UI that were easy to use:</h3>
@@ -79,93 +96,95 @@
                     </select>
                 </div>
 
-                <div class="card">
-                    <!--Radio button question.-->
-                    <h3>Select your overall satisfaction with the Cheesecake Factory's UI Reponse times:</h3>
-                    <label>
-                        <input type="radio" name="response" value="slow">Slow
-                    </label>
-                    <br>
-                    <label>
-                        <input type="radio" name="response" value="fast">Fast
-                    </label>
-                    <br>
-                    <label>
-                        <input type="radio" name="response" value="Instant">Instant
-                    </label>
+                <div class="nav">
+                <button type="button" class="back">Back</button>
+                <button type="button" class="next">Next</button>
                 </div>
-
             </div>
 
-            <!--Image Gallery Here-->
+            <!-- STEP 4 -->
+            <div class="step" data-step="3" style="display:none;">
+
+            <div class="card">
+                <h3>Select your overall satisfaction with the Cheesecake Factory's UI Response times:</h3>
+                <label><input type="radio" name="response" value="slow"> Slow</label><br>
+                <label><input type="radio" name="response" value="fast"> Fast</label><br>
+                <label><input type="radio" name="response" value="instant"> Instant</label>
+            </div>
+
+            <!-- Image Gallery Here -->
             <h3>Website Image Gallery</h3>
+
             <div class="item">
                 <div class="gallery">
-                    <a target="_blank" href="webImage1.png">
-                        <img src="webImage1.png" alt="Cheesecake Rewards" width="500" height="600">
-                    </a>
-                    <div class="description">Cheesecake Factory Member Rewards.</div>
+                <a target="_blank" href="webImage1.png">
+                    <img src="webImage1.png" alt="Cheesecake Rewards" width="500" height="600">
+                </a>
+                <div class="description">Cheesecake Factory Member Rewards.</div>
                 </div>
             </div>
             <br>
+
             <div class="item">
                 <div class="gallery">
-                    <a target="_blank" href="webImage2.png">
-                        <img src="webImage2.png" alt="Gift Cards">
-                    </a>
-                    <div class="description">Cheesecake Factory Gift Card Store.</div>
+                <a target="_blank" href="webImage2.png">
+                    <img src="webImage2.png" alt="Gift Cards">
+                </a>
+                <div class="description">Cheesecake Factory Gift Card Store.</div>
                 </div>
             </div>
             <br>
+
             <div class="item">
                 <div class="gallery">
-                    <a target="_blank" href="webImage3.png">
-                        <img src="webImage3.png" alt="Locations Near you">
-                    </a>
-                    <div class="description">Cheesecake Factory Location Finder.</div>
+                <a target="_blank" href="webImage3.png">
+                    <img src="webImage3.png" alt="Locations Near you">
+                </a>
+                <div class="description">Cheesecake Factory Location Finder.</div>
                 </div>
             </div>
             <br>
+
             <div class="item">
                 <div class="gallery">
-                    <a target="_blank" href="webImage4.png">
-                        <img src="webImage4.png" alt="Menu">
-                    </a>
-                    <div class="description">Cheesecake Factory Menu.</div>
+                <a target="_blank" href="webImage4.png">
+                    <img src="webImage4.png" alt="Menu">
+                </a>
+                <div class="description">Cheesecake Factory Menu.</div>
                 </div>
             </div>
 
             <br>
 
             <div class="card">
-                <!--Questions about various parts of the site.-->
                 <h3>Is the members page of the website easy to understand:</h3>
-                <textarea rows="5" cols="100"></textarea>
-                <br>
+                <textarea name="members_page" rows="5" cols="100"></textarea><br>
+
                 <h3>Does the gift card page of the website have good response times:</h3>
-                <textarea rows="5" cols="100"></textarea>
-                <br>
+                <textarea name="giftcard_response" rows="5" cols="100"></textarea><br>
+
                 <h3>Does the location finder page of the website show accurate information:</h3>
-                <textarea rows="5" cols="100"></textarea>
-                <br>
+                <textarea name="location_accuracy" rows="5" cols="100"></textarea><br>
+
                 <h3>Is the menu page of the website organized:</h3>
-                <textarea rows="5" cols="100"></textarea>
-                <br>
+                <textarea name="menu_organized" rows="5" cols="100"></textarea><br>
             </div>
 
             <br>
 
             <div class="card">
-                <!--Space for comments.-->
                 Please provide any additional comments here:<br>
-                <textarea rows="5" cols="30"></textarea>
+                <textarea name="comments" rows="5" cols="30"></textarea>
             </div>
 
-            <!--Submission button for the form.-->
-            <button id="submitButton" type="button" class="block">
-                Submit UI Survey!
-            </button>
+            <div class="nav">
+                <button type="button" class="back">Back</button>
+                <button id="submitButton" type="submit" class="block">Submit UI Survey!</button>
+            </div>
 
+            </div>
+
+          
             <!--Group members' signatures.-->
             <p id="signature">Site created by David Chen, YiYau Wong, and Zilin Liu</p>
 
@@ -189,6 +208,22 @@
         analystView.style.display = 'none';
         surveyView.style.display = 'block';
     });
+</script>
+
+<script>
+  const steps = document.querySelectorAll(".step");
+  let i = 0;
+
+  function show(n) {
+    steps[i].style.display = "none";
+    i = n;
+    steps[i].style.display = "block";
+  }
+
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("next") && i < steps.length - 1) show(i + 1);
+    if (e.target.classList.contains("back") && i > 0) show(i - 1);
+  });
 </script>
 
 </html>
