@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const router = express.Router();
-const dataFile = path.join(__dirname, 'data', 'submissions.json');
+const dataFile = path.join(__dirname, 'submissions.json');
 
 // Ensure file exists
 if (!fs.existsSync(dataFile)) {
