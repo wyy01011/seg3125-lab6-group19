@@ -23,7 +23,7 @@
 
 
         <h1>Survey: Cheesecake Factory UI</h1> <!--Sets the title on the webpage.-->
-        <form id="myform" action="index.php"> <!--Create the form element with 6 questions.-->
+        <form id="myform"> <!--Create the form element with 6 questions.-->
             <div class="intro">
                 <p>The UI the survey will be about is the main page for the Cheesecake Factory.
                     It is well known for their cheesecakes and large menu options.</p>
@@ -87,7 +87,7 @@
                 <div class="card">
                     <!--Dropdown list question.-->
                     <h3>How visually appealing is the website?</h3>
-                    <select id="favorite">
+                    <select id="favorite" name="visual_appeal">
                         <option value="Not Visual">Not Visual</option>
                         <option value="Somewhat Visual">Somewhat Visual</option>
                         <option value="Average Visual">Average Visual</option>
@@ -181,10 +181,8 @@
                 <button type="button" class="back">Back</button>
                 <button id="submitButton" type="submit" class="block">Submit UI Survey!</button>
             </div>
-
             </div>
 
-          
             <!--Group members' signatures.-->
             <p id="signature">Site created by David Chen, YiYau Wong, and Zilin Liu</p>
 
@@ -210,6 +208,7 @@
     });
 </script>
 
+<!--JavaScript for multi-step form navigation and form submission handling. -->
 <script>
   const steps = document.querySelectorAll(".step");
   let i = 0;
@@ -223,6 +222,44 @@
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("next") && i < steps.length - 1) show(i + 1);
     if (e.target.classList.contains("back") && i > 0) show(i - 1);
+  });
+</script>
+
+<!--JavaScript for handling form submission and sending data to the server.-->
+<script>
+  document.getElementById("myform").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+
+    const data = {
+      firstname: form.firstname.value,
+      lastname: form.lastname.value,
+      like_hate: form.like_hate.value,
+      add_feature: form.add_feature.value,
+      modify_feature: form.modify_feature.value,
+      visual_appeal: form.visual_appeal.value,
+      response: form.response.value,
+      tabs: Array.from(form.querySelectorAll('input[name="Tab"]:checked')).map(x => x.value),
+      members_page: form.members_page.value,
+      giftcard_response: form.giftcard_response.value,
+      location_accuracy: form.location_accuracy.value,
+      menu_organized: form.menu_organized.value,
+      comments: form.comments.value
+    };
+
+    const res = await fetch("http://localhost:3000/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+      alert("Submitted!");
+      form.reset();
+    } else {
+      alert("Submit failed.");
+    }
   });
 </script>
 

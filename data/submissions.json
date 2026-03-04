@@ -1,1 +1,39 @@
-[]
+[
+  {
+    "firstname": "Yi Yau",
+    "lastname": "Wong",
+    "like_hate": "qw",
+    "add_feature": "qw",
+    "modify_feature": "qw",
+    "visual_appeal": "Not Visual",
+    "response": "fast",
+    "tabs": [
+      "Careers",
+      "Reservations"
+    ],
+    "members_page": "qwqwqw",
+    "giftcard_response": "qwqwqw",
+    "location_accuracy": "12",
+    "menu_organized": "w",
+    "comments": "no"
+  },
+  {
+    "firstname": "Ian",
+    "lastname": "Chan",
+    "like_hate": "123",
+    "add_feature": "21313",
+    "modify_feature": "12323",
+    "visual_appeal": "Not Visual",
+    "response": "slow",
+    "tabs": [
+      "Locations",
+      "Gift Cards",
+      "Reservations"
+    ],
+    "members_page": "tyas",
+    "giftcard_response": "wqeqs",
+    "location_accuracy": "asdawe",
+    "menu_organized": "qweqwe",
+    "comments": "asdawew"
+  }
+]
