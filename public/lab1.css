@@ -82,7 +82,7 @@ textarea{
 
 .header-btn {
     padding: 10px 18px;
-    background-color: #b30000; 
+    background-color: #9fb4ff; 
     color: white;
     border: none;
     border-radius: 6px;
@@ -91,5 +91,5 @@ textarea{
 }
 
 .header-btn:hover {
-    background-color: #8a0000;
+    background-color: #8698d8;
 }

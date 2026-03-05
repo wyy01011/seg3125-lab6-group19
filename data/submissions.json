@@ -35,5 +35,22 @@
     "location_accuracy": "asdawe",
     "menu_organized": "qweqwe",
     "comments": "asdawew"
+  },
+  {
+    "firstname": "s",
+    "lastname": "s",
+    "like_hate": "s",
+    "add_feature": "s",
+    "modify_feature": "s",
+    "visual_appeal": "Perfect Visual",
+    "response": "slow",
+    "tabs": [
+      "Careers"
+    ],
+    "members_page": "s",
+    "giftcard_response": "s",
+    "location_accuracy": "s",
+    "menu_organized": "s",
+    "comments": "s"
   }
 ]
