@@ -133,8 +133,9 @@ textarea{
 
 .nav {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 12px;
+  gap: 15px;
   margin: 14px 0 6px 0;
 }
 
