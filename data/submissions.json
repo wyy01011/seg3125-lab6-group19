@@ -52,5 +52,22 @@
     "location_accuracy": "s",
     "menu_organized": "s",
     "comments": "s"
+  },
+  {
+    "firstname": "f",
+    "lastname": "f",
+    "like_hate": "f",
+    "add_feature": "f",
+    "modify_feature": "f",
+    "visual_appeal": "Somewhat Visual",
+    "response": "",
+    "tabs": [
+      "Careers"
+    ],
+    "members_page": "Somewhat",
+    "giftcard_response": "Somewhat",
+    "location_accuracy": "Yes",
+    "menu_organized": "Somewhat",
+    "comments": "f"
   }
 ]

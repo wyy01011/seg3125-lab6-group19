@@ -80,9 +80,11 @@ textarea{
     border-bottom: 2px solid #ddd;
 }
 
-.header-btn {
+.header-btn,
+.next,
+.back {
     padding: 10px 18px;
-    background-color: #9fb4ff; 
+    background-color: #9fb4ff;
     color: white;
     border: none;
     border-radius: 6px;
@@ -90,7 +92,9 @@ textarea{
     font-size: 15px;
 }
 
-.header-btn:hover {
+.header-btn:hover,
+.next:hover,
+.back:hover {
     background-color: #8698d8;
 }
 

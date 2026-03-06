@@ -7,41 +7,102 @@
     <title>UI Survey</title> <!--Sets the title of the HTML page.-->
 </head>
 
-<!-- Script to load in submissions from the data folder.-->
+<!--Script to load in submissions from the data folder.-->
+<!--Include Chart.js. Cited in read me file.-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <script>
     async function loadSubmissions() {
         const res = await fetch('/api/submissions');
         const submissions = await res.json();
 
-        const container = document.getElementById('analystView');
-        container.innerHTML = "<h1>Analyst View</h1>";
+        const container = document.getElementById('analystView'); //Get the container to hold the analyst view.
+        container.innerHTML = "<h1>Analyst Dashboard</h1>";
 
+        //Create a canvas for the chart.
+        const chartCanvas = document.createElement('canvas');
+        chartCanvas.id = "visualAppealChart";
+        chartCanvas.style.maxWidth = "600px";
+        chartCanvas.style.marginBottom = "40px";
+        container.appendChild(chartCanvas);
+
+        //Count the amount of responses for visual appeal level.
+        const counts = {};
+        submissions.forEach(entry => {
+            const value = entry.visual_appeal;
+            counts[value] = (counts[value] || 0) + 1;
+        });
+
+        const labels = Object.keys(counts).sort((a, b) => a - b);
+        const data = labels.map(label => counts[label]);
+
+        //Render the cart and create it.
+        new Chart(chartCanvas, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Number of Responses',
+                    data: data,
+                    backgroundColor: '#4A90E2',
+                    barPercentage: 0.6,
+                    categoryPercentage: 0.7
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: 'black',
+                            stepSize: 1
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'black'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'black'
+                        }
+                    }
+                }
+            }
+        });
+
+        //Construct a card container for each submission and list the responses.
         submissions.forEach((entry, index) => {
             const card = document.createElement('div');
             card.className = 'submission-card';
 
             card.innerHTML = `
-            <h2>Submission #${index + 1}</h2>
-            <p><strong>Name:</strong> ${entry.firstname} ${entry.lastname}</p>
-            <p><strong>Feature That is Well Liked and Hated:</strong> ${entry.like_hate}</p>
-            <p><strong>Feature to Add:</strong> ${entry.add_feature}</p>
-            <p><strong>Feature to Modify:</strong> ${entry.modify_feature}</p>
-            <p><strong>Visual Appeal Level:</strong> ${entry.visual_appeal}</p>
-            <p><strong>Response Speed:</strong> ${entry.response}</p>
-            <p><strong>Easy to Navigate Tabs:</strong> ${entry.tabs.join(', ')}</p>
-            <p><strong>Members Page:</strong> ${entry.members_page}</p>
-            <p><strong>Gift Card Response:</strong> ${entry.giftcard_response}</p>
-            <p><strong>Location Accuracy:</strong> ${entry.location_accuracy}</p>
-            <p><strong>Menu Organization:</strong> ${entry.menu_organized}</p>
-            <p><strong>Additional Comments:</strong> ${entry.comments}</p>
-            <hr>
-        `;
+                <h2>Submission #${index + 1}</h2>
+                <p><strong>Name:</strong> ${entry.firstname} ${entry.lastname}</p>
+                <p><strong>Feature That is Well Liked and Hated:</strong> ${entry.like_hate}</p>
+                <p><strong>Feature to Add:</strong> ${entry.add_feature}</p>
+                <p><strong>Feature to Modify:</strong> ${entry.modify_feature}</p>
+                <p><strong>Visual Appeal Level:</strong> ${entry.visual_appeal}</p>
+                <p><strong>Response Speed:</strong> ${entry.response}</p>
+                <p><strong>Easy to Navigate Tabs:</strong> ${entry.tabs.join(', ')}</p>
+                <p><strong>Members Page Easy to Understand?:</strong> ${entry.members_page}</p>
+                <p><strong>Good Gift Card Response Times?:</strong> ${entry.giftcard_response}</p>
+                <p><strong>Good Location Accuracy?:</strong> ${entry.location_accuracy}</p>
+                <p><strong>Organized Menu Page?:</strong> ${entry.menu_organized}</p>
+                <p><strong>Additional Comments:</strong> ${entry.comments}</p>
+                <hr>
+            `;
 
             container.appendChild(card);
         });
     }
 
-    document.addEventListener('DOMContentLoaded', loadSubmissions);
+    document.addEventListener('DOMContentLoaded', loadSubmissions); //Call this function when the webpage loads.
 </script>
 
 <body>
@@ -236,7 +297,7 @@
         </form>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const gallery = document.getElementById("imageGallery");
             const anchor = document.getElementById("topGalleryAnchor");
 
