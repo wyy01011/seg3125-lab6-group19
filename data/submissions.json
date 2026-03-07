@@ -69,5 +69,23 @@
     "location_accuracy": "Yes",
     "menu_organized": "Somewhat",
     "comments": "f"
+  },
+  {
+    "firstname": "David ",
+    "lastname": "Chen",
+    "like_hate": "Like that it's colorful, but hate the font style choice.",
+    "add_feature": "Nothing that comes in mind.",
+    "modify_feature": "Modify how prices are being shown without a location selected.",
+    "visual_appeal": "Perfect Visual",
+    "response": "fast",
+    "tabs": [
+      "Browse Menu",
+      "Gift Cards"
+    ],
+    "members_page": "Somewhat",
+    "giftcard_response": "Yes",
+    "location_accuracy": "No",
+    "menu_organized": "Yes",
+    "comments": ""
   }
 ]

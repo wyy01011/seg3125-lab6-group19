@@ -98,6 +98,13 @@ textarea{
     background-color: #8698d8;
 }
 
+.next,
+.back {
+    width: 140px;      
+    display: inline-block;
+    text-align: center;
+}
+
 .submission-card {
     background-color: #fdfbee;   
     border-radius: 10px;         

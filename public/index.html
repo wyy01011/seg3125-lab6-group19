@@ -37,44 +37,75 @@
         const data = labels.map(label => counts[label]);
 
         //Render the cart and create it.
-        new Chart(chartCanvas, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Number of Responses',
-                    data: data,
-                    backgroundColor: '#4A90E2',
-                    barPercentage: 0.6,
-                    categoryPercentage: 0.7
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            color: 'black',
-                            stepSize: 1
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            color: 'black'
-                        }
-                    }
+new Chart(chartCanvas, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'Number of Responses',
+            data: data,
+            backgroundColor: '#4A90E2',
+            barPercentage: 0.6,
+            categoryPercentage: 0.7
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    color: 'black',
+                    stepSize: 1
                 },
-                plugins: {
-                    legend: {
-                        labels: {
-                            color: 'black'
-                        }
+                title: {
+                    display: true,
+                    text: 'Number of Responses',
+                    color: 'black',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    }
+                }
+            },
+            x: {
+                ticks: {
+                    color: 'black'
+                },
+                title: {
+                    display: true,
+                    text: 'Visual Appeal Rating',
+                    color: 'black',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
                     }
                 }
             }
-        });
+        },
+        plugins: {
+            legend: {
+                labels: {
+                    color: 'black'
+                }
+            },
+            title: {
+                display: true,
+                text: 'Total Visual Appeal Ratings',
+                color: 'black',
+                font: {
+                    size: 20,
+                    weight: 'bold'
+                },
+                padding: {
+                    top: 10,
+                    bottom: 20
+                }
+            }
+        }
+    }
+});
 
         //Construct a card container for each submission and list the responses.
         submissions.forEach((entry, index) => {
@@ -108,8 +139,8 @@
 <body>
 
     <div class="header">
-        <button class="header-btn">Analyst View</button>
         <button class="header-btn">Survey View</button>
+        <button class="header-btn">Analyst View</button>
     </div>
 
     <div id="analystView" style="display:none;">
@@ -311,8 +342,8 @@
 </body>
 
 <script>
-    const analystBtn = document.querySelector('.header-btn:nth-child(1)');
-    const surveyBtn = document.querySelector('.header-btn:nth-child(2)');
+    const analystBtn = document.querySelector('.header-btn:nth-child(2)');
+    const surveyBtn = document.querySelector('.header-btn:nth-child(1)');
 
     const analystView = document.getElementById('analystView');
     const surveyView = document.getElementById('surveyView');
